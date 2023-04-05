@@ -21,7 +21,6 @@ export default function UserPageComponent() {
   const router = useRouter();
   delete fields.token;
   delete fields.favorites;
-  delete fields.image;
 
   const updateMessage = (text, color) => {
     setMessage({text, color})
@@ -106,6 +105,7 @@ export default function UserPageComponent() {
               src={userState.image}
               width={150}
               height={150}
+              crossOrigin='anonymous'
               onClick={inputClick}
             />
           </div>
@@ -126,7 +126,7 @@ export default function UserPageComponent() {
               {Object.keys(userDataObjectPattern.data.favorites).map((field) => (
                 <>
                   <Typography variant='h5'>{field.toUpperCase()}</Typography>
-                  <TextField defaultValue={userState.favorites[field]} className={styles.inputs} placeholder={field.toUpperCase()} name={field} variant="outlined" fullWidth />
+                  <TextField defaultValue={userState.favorites?.[field] ?? ''} className={styles.inputs} placeholder={field.toUpperCase()} name={field} variant="outlined" fullWidth />
                 </>
               ))}
             </div>

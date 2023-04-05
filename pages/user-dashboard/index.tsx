@@ -1,5 +1,5 @@
 import React from 'react'
-import UserPageComponent from '../../components/UserPage/UserPageComponent'
+import UserPageComponent from '../../components/userPage/UserPageComponent'
 
 export default function UserPage() {
   return (

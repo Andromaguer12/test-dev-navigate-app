@@ -6,5 +6,9 @@ export const pagesConfig = {
   '/': {
     isPrivate: false,
     redirect: ''
+  },
+  '/register': {
+    isPrivate: false,
+    redirect: ''
   }
 }
